@@ -24,4 +24,4 @@ jsonwebtoken    <!--  Permite crear y verificar tokens JWT, útiles para autenti
 morgan          <!--  Middleware para registrar solicitudes HTTP en el servidor, útil para depuración y monitoreo.  -->
 cookie-parser   <!--  Middleware para analizar cookies en las solicitudes HTTP.  -->
 bcryptjs        <!--  Librería para encriptar y comparar contraseñas de forma segura.  -->
-cors  <!-- es para enlazar el puerto del back con el frontd-->
+cors  <!-- es para enlazar el puerto del back con el front-->
