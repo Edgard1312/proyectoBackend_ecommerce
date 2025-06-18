@@ -1,0 +1,52 @@
+.task-form {
+    width: 100%;
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-form-container h1{
+    text-align: center;
+}
+
+.task-form-conteiner {
+    width: 50%;
+    height: 50%;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    border-radius: 5px;
+}
+
+.task-form-conteiner input, textarea {
+    outline: none;
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.task-form-conteiner input:hover, textarea:hover {
+    border: 1px solid black;
+    transition: all .5s;
+}
+
+.task-form-conteiner button {
+    outline: none;
+    width: 150px;   
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all .9s;
+}
+
+.task-form-conteiner button:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}

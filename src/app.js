@@ -9,7 +9,8 @@ const app= express();
 
 
 app.use(cors({
-    origin: 'http://localhost:5173'
+  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  credentials: true
 }));  //módulo para conectar el back con el front
 app.use(morgan('dev')); //muestra peticiones por consola
 app.use(express.json()); //convierte los datos en Json por express
