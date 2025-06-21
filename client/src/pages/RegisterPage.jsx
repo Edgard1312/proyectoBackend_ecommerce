@@ -56,9 +56,9 @@ function RegisterPage() {
           />
           {errors.password && <span>La contraseña es requerida</span>}
 
-          <button type="submit">Register</button>
+          <button type="submit">Registrate</button>
           <p>
-            ¿Ya tienes una cuenta? <Link to="/login">Logeate</Link>
+            ¿Ya tenés una cuenta? <Link to="/login">Logeate</Link>
           </p>
         </form>
       </div>
