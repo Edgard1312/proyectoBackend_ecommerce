@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./stylePage/RegisterPage.css";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -26,9 +25,11 @@ function RegisterPage() {
   return (
     <>
       <div className="form-container">
-        <h1>Formulario de registro</h1>
+        
 
         <form onSubmit={onSubmit}>
+          <h1>Formulario de registro</h1>
+          
           {registerErrors.map((error, i) => (
             <div className="bg-red-500 p-2" key={i}>
               {error}

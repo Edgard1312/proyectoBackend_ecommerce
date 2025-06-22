@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from "../context/AuthContext"
 
+import './styleComponents/NavBar.css'
+
 function NavBar() {
   const { isAuthenticated, logout, user } = useAuth();
   return (
@@ -14,11 +16,17 @@ function NavBar() {
         <ul>
           {isAuthenticated ? (
             <>
-              <li>
+              <p>
                 Bienvenido {user.username}
+              </p>
+              <li>
+                <Link to="/">Inicio</Link>
               </li>
               <li>
-                <Link to="/products">Agregar Productos</Link>
+                <Link to="#">Productos</Link>
+              </li>
+              <li>
+                <Link to="/products">Contacto</Link>
               </li>
               <li>
                 <Link to="/" onClick={() =>{logout();}}>Cerrar sesion</Link>

@@ -11,6 +11,7 @@ import TasksPage from './pages/TasksPage';
 import TaskFormPage from './pages/TaskFormPage';
 import ProtectedRoute from './ProtectedRoute';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 import './App.css'
 
@@ -35,6 +36,7 @@ function App() {
               <Route path="/profile" element={<ProfilePage />} />
             </Route>
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </TaskProvider>
     </AuthProvider>

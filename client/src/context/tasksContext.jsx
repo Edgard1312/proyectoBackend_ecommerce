@@ -4,6 +4,7 @@ import {
     getTasksRequest, 
     deleteTasksRequest,
     getTaskRequest,
+    updateTasksRequest,
  } from '../api/tasks'
 const TaskContext = createContext();
 
@@ -32,7 +33,7 @@ export function TaskProvider ({ children }) {
         const res = await createTasksRequest(task)
         console.log(res)
     }
-    const deleteTask = async (id) =>{
+    const deleteTask = async (id) => {
         
         try {
           const res = await deleteTasksRequest(id);
@@ -42,9 +43,21 @@ export function TaskProvider ({ children }) {
         }
 
     };
-    const getTask = async (id) =>{
-        const res = await getTaskRequest(id)
-        console.log(res)
+    const getTask = async (id) => {
+        try {
+            const res = await getTaskRequest(id)
+            return res.data
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    const updateTask = async (id, task) => {
+        try {
+            console.log("ID que se envía para actualizar:", id);
+            await updateTasksRequest(id, task);
+        } catch (error) {
+            console.error(error);
+        }
     }
     
     return (
@@ -54,12 +67,12 @@ export function TaskProvider ({ children }) {
             createTask, 
             getTasks,
             deleteTask,
-            getTask
+            getTask,
+            updateTask
         }}>
         { children }
         </TaskContext.Provider>
     );
 }
-
 
 

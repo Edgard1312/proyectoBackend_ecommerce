@@ -7,20 +7,31 @@ import { useEffect } from "react";
 
 function TaskFormPage() {
 
-  const {register, handleSubmit} = useForm();
-  const {createTask, getTask} = useTasks()
+  const {register, handleSubmit, setValue} = useForm();
+  const {createTask, getTask, updateTask} = useTasks()
   const navegate = useNavigate()
   const params = useParams();
 
   useEffect(() => {
-    if (params.id) {
-      getTask(params.id);
-    }
+    async function loadTask() {
+      if (params.id) {
+      const task = await getTask(params.id);
+      console.log(task)
+      setValue('title', task.title)
+      setValue('description', task.description)
+    } 
+  }
+  loadTask()
   }, []);
+   
     
-  
+    
   const onSubmit= handleSubmit((data)=>{
-    createTask(data);
+    if (params.id) {
+      updateTask(params.id, data)
+    } else {
+      createTask(data);
+    }
     navegate("/tasks");
   })
 

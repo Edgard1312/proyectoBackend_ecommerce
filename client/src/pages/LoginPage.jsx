@@ -25,9 +25,9 @@ function LoginPage() {
   }, [isAuthenticated]);
 
   return (
-    <div className="form-container">
-      <h1>Login</h1>
+    <div className="form-container">  
       <form onSubmit={onSubmit}>
+        <h1>Login</h1>
         {signinErrors.map((error, i) => (
           <div className="error-login" key={i}>
             {error}
